@@ -1,22 +1,38 @@
 // import logo from './logo.svg';
 import './App.css';
-import whiskey from './dogs/whiskey.jpg'
-import duke from './dogs/duke.jpg'
-import perry from './dogs/perry.jpg'
-import tubby from './dogs/tubby.jpg'
+
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+
+import whiskey from './dogs/whiskey.jpg';
+import duke from './dogs/duke.jpg';
+import perry from './dogs/perry.jpg';
+import tubby from './dogs/tubby.jpg';
+
+import DogList from './DogList';
+import Dog from './Dog';
 
 function App( {dogs} ) {
 
-  console.log(dogs)
-
-
   return (
-    <div className="App">
 
-      <img src={dogs[1].src}></img>
+    <div className='App'>
+
+    <BrowserRouter>
+
+    <Routes>
+      <Route exact path="/dogs" element={<DogList dogs={dogs}/>} />
+      <Route path="/dogs/:name" element={<Dog dogs={dogs}/>}>
+      </Route>
+      <Route path="*" element={<Navigate to="/dogs" />}/>
+    </Routes>
+
+    </BrowserRouter>
 
     </div>
+
+    
   );
+
 }
 
 App.defaultProps = {
