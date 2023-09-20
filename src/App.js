@@ -11,6 +11,8 @@ import tubby from './dogs/tubby.jpg';
 import DogList from './DogList';
 import Dog from './Dog';
 
+import ColorList from './ColorList.js';
+
 function App( {dogs} ) {
 
   return (
@@ -20,6 +22,7 @@ function App( {dogs} ) {
     <BrowserRouter>
 
     <Routes>
+      <Route exact path ="/colors" element={<ColorList />} />
       <Route exact path="/dogs" element={<DogList dogs={dogs}/>} />
       <Route path="/dogs/:name" element={<Dog dogs={dogs}/>}>
       </Route>
