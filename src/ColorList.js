@@ -3,9 +3,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
 
 
-const ColorList = ( {colors, modifyPathHistory} ) => {
-
-    modifyPathHistory('/colors')
+const ColorList = ( {colors} ) => {
 
     return (
         <div>

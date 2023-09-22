@@ -19,36 +19,13 @@ import Router from './Router';
 
 function App( {dogs, colors} ) {
 
-  console.log("RERENDER")
-
-  const INITIAL_STATE = {path:'/dogs'}
-
-  let [pathHistory, updatePathHistory] = useState(INITIAL_STATE)
-
-  console.log(pathHistory.path)
-
-  const modifyPathHistory = (text) => {
-
-    console.log(pathHistory)
-
-    updatePathHistory(pathHistory => {
-
-      pathHistory.path = text
-      return pathHistory
-
-    })
-
-    console.log(pathHistory)
-
-  }
-
   return (
 
     <div className='App'>
 
       <BrowserRouter>
 
-      <Router colors={colors} dogs={dogs} pathHistory={pathHistory} modifyPathHistory={modifyPathHistory} />
+      <Router colors={colors} dogs={dogs} />
 
       </BrowserRouter>
 
