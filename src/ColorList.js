@@ -14,6 +14,10 @@ const ColorList = ( {colors} ) => {
             {colors.map(c => <div><NavLink key={c} to={"/colors/" + c}>{c}</NavLink></div>)}
             </div>
 
+            <div>
+            <NavLink to={'/colors/new'}>Add A Color!</NavLink>
+            </div>
+
         </div>
     )
 }

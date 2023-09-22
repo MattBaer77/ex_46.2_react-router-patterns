@@ -1,8 +1,10 @@
 import React from "react";
 
-import { useParams, NavLink, Navigate } from 'react-router-dom'
+import { useParams, NavLink, useNavigate } from 'react-router-dom'
 
 const Dog = ( {dogs} ) => {
+
+    const navigate = useNavigate()
 
     const {name} = useParams();
 
@@ -10,7 +12,7 @@ const Dog = ( {dogs} ) => {
 
     if (!dog){
 
-        return <Navigate to="/dogs"/>
+        navigate('/dogs')
 
     }
 

@@ -2,9 +2,11 @@ import React from "react";
 
 import './Color.css';
 
-import { useParams, NavLink, Navigate} from 'react-router-dom'
+import { useParams, NavLink, Navigate, useNavigate} from 'react-router-dom'
 
 const Color = ( {colors} ) => {
+
+    const navigate = useNavigate()
 
     const {color} = useParams();
 
@@ -12,8 +14,8 @@ const Color = ( {colors} ) => {
 
     if (!foundColor) {
 
-        return <Navigate to="/colors" />
-
+        navigate('/colors')
+        
     }
 
     return (

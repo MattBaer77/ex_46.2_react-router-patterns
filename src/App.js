@@ -17,7 +17,15 @@ import tubby from './dogs/tubby.jpg';
 
 import Router from './Router';
 
-function App( {dogs, colors} ) {
+function App( {dogs, initialColors} ) {
+
+  const [colors, changeColors] = useState(initialColors)
+
+  const addColor = (newColor) => {
+
+    changeColors(colors => [...colors, newColor])
+
+  }
 
   return (
 
@@ -25,7 +33,7 @@ function App( {dogs, colors} ) {
 
       <BrowserRouter>
 
-      <Router colors={colors} dogs={dogs} />
+      <Router colors={colors} addColor={addColor} dogs={dogs} />
 
       </BrowserRouter>
 
@@ -78,7 +86,7 @@ App.defaultProps = {
         ]
       }
     ],
-    colors: [
+    initialColors: [
         "red",
         "green",
         "blue"
