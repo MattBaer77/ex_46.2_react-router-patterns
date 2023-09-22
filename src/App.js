@@ -21,11 +21,24 @@ function App( {dogs, colors} ) {
 
   console.log("RERENDER")
 
-  let [pathHistory, updatePathHistory] = useState('/dogs')
+  const INITIAL_STATE = {path:'/dogs'}
+
+  let [pathHistory, updatePathHistory] = useState(INITIAL_STATE)
+
+  console.log(pathHistory.path)
 
   const modifyPathHistory = (text) => {
 
-    updatePathHistory(pathHistory = text)
+    console.log(pathHistory)
+
+    updatePathHistory(pathHistory => {
+
+      pathHistory.path = text
+      return pathHistory
+
+    })
+
+    console.log(pathHistory)
 
   }
 
