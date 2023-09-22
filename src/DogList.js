@@ -13,7 +13,7 @@ const DogList = ( {dogs} ) => {
         {dogs.map(d => <div><NavLink key={d.name} to={"/dogs/"+d.name}>{d.name}</NavLink></div>)}
 
         <div>
-            <NavLink to={'/colors'}>Colors!</NavLink>
+            <NavLink to={'/colors'}>Click Here For Colors!</NavLink>
         </div>
         
         </div>
